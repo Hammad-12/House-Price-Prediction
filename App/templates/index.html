@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOUSE PRICE PREDICTION</title>
+</head>
+<body>
+
+    <h1>House Price Prediction</h1>
+
+    <form method="post" action="/predict">
+        <label>Total Area(square feet)</label><br>
+        <input type="text" name="total_sqft"><br><br>
+
+        <label>Bath(s)</label><br>
+        <input type="text" name="bath"><br><br>
+
+        <label>Balcony(s)</label><br>
+        <input type="text" name="balcony"><br><br>
+
+        <label>bhk(s)</label><br>
+        <input type="text" name="bhk"><br><br>
+
+        <label for="area_type">Choose Type of Area:</label>
+
+            <select name="area_type" id="area_type">
+              <option value="sa">Super Built Area</option>
+              <option value="ba">Built-up Area</option>
+              <option value="ca">Carpet Area</option>
+              <option value="pa">Plot Area</option>
+            </select><br><br>
+
+        <input type="submit" value="Predict"><br><br>
+    </form>
+
+    {% if result %}
+        <p>The Estimated Price is: {{ result }} pkr</p>
+    {% endif %}
+
+</body>
+</html>
